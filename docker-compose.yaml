@@ -15,3 +15,6 @@ services:
     build: ./weather
     networks:
       - "encounter-net"
+  volumes:
+  networks:
+    encounter-net:
