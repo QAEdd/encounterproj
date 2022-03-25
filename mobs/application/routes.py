@@ -20,3 +20,7 @@ def get-mob():
     elif request_ == 'Tavern'
         mobs.append('Dragon')
         mobs.append('Dragon')
+    mob = choice(mobs)
+    return json(mob)
+
+ 
