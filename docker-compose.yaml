@@ -1,0 +1,20 @@
+version: "3.8"
+services: 
+  location:
+    image: qaedd/location:latest
+    build: ./location
+    networks:
+      - "encounter-net"
+  mobs:
+    image: qaedd/mobs:latest
+    build: ./mobs
+    networks:
+      - "encounter-net"
+  weather:
+    image: qaedd/weather:latest
+    build: ./weather
+    networks:
+      - "encounter-net"
+  volumes:
+  networks:
+    encounter-net:
