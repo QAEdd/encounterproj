@@ -20,6 +20,10 @@ services:
   build: ./front-end
   networks:
    - 'encounter-net'
+  depends_on:
+   - 'weather'
+   - 'mobs'
+   - 'location'
   location:
     image: qaedd/location:latest
     build: ./location
