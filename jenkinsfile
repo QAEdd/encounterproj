@@ -14,9 +14,9 @@ pipeline {
         }
         stage('deploy stack') {
             steps {
-                sh "scp ./docker-compose.yaml proj-jenkins@ansible-sm:/home/jenkins/docker-compose.yaml"
-                sh "scp ./nginx.conf proj-jenkins@ansible-sm:/home/jenkins/nginx.conf"
-                sh "ssh proj-jenkins@ansible-sm < deploy.sh"
+                sh "scp ./docker-compose.yaml jenkins@proj-manager:/home/jenkins/docker-compose.yaml"
+                sh "scp ./nginx.conf jenkins@proj-manager:/home/jenkins/nginx.conf"
+                sh "ssh jenkins@proj-manager < deploy.sh"
             }
         }
     }
