@@ -6,7 +6,7 @@ from random import choice
 mobs = ['Dragon','Goblins','Owlbear','Fire Giant']
 
 @app.route('/get-mobs', methods=['POST'])
-def get-mob():
+def get_mob():
     request_ = requests.json()
     if request_ == "Volcano":
         mobs.append('Fire Giant')
