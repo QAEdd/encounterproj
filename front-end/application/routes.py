@@ -8,4 +8,4 @@ def index():
     weather_ = requests.get('http://weather:5000/get-weather')
     mobs_ = requests.post('http://mobs:5000/get-mobs', json=location_.json())
     results = "you will be fighting " + mobs_.json + " by a " + location_.json() + "while the weather is " + weather_.json() 
-    return render_template('index.html', resutls = results)
+    return render_template('index.html', results = results)
