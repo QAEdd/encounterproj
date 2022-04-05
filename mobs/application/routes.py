@@ -11,13 +11,13 @@ def get_mob():
     if request_ == "Volcano":
         mobs.append('Fire Giant')
         mobs.append('Fire Giant')
-    elif request_ == "Forest"
+    elif request_ == "Forest":
         mobs.append('Owlbear')
         mobs.append('Owlbear')
-    elif request_ == "On the road"
+    elif request_ == "On the road":
         mobs.append('Goblin')
         mobs.append('Goblin')
-    elif request_ == 'Tavern'
+    elif request_ == 'Tavern':
         mobs.append('Dragon')
         mobs.append('Dragon')
     mob = choice(mobs)
