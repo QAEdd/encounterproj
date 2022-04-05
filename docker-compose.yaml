@@ -7,9 +7,9 @@ services:
         target: 80
         protocol: tcp
     volumes:
-     - type: bind
-     source: ./nginx.conf
-     target: /etc/nginx/nginx.conf
+    - type: bind
+      source: ./nginx.conf
+      target: /etc/nginx/nginx.conf
     networks:
      - 'encounter-net'
     depends_on:
