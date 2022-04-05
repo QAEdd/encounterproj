@@ -44,3 +44,5 @@ services:
    replicas: 3
   networks:
    - 'encounter-net'
+networks:
+  encounter-net:
