@@ -41,6 +41,6 @@ services:
      replicas: 3
     networks:
       - "encounter-net"
-  volumes:
   networks:
     encounter-net:
+    
