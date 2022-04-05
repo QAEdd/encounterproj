@@ -1,18 +1,44 @@
 version: "3.8"
 services: 
+ nginx:
+  container_name: nginx
+  image: nginx:latest
+  ports:
+   - target: 80
+     published: 80
+  volumes:
+   - type: bind
+     source: ./nginx.conf
+     target: /etc/nginx/nginx.conf
+  networks:
+   - 'encounter-net'
+  depends_on:
+   - 'front-end'
+ front-end:
+  container_name: front-end
+  image: qaedd/front-end:latest
+  build: ./front-end
+  networks:
+   - 'encounter-net'
   location:
     image: qaedd/location:latest
     build: ./location
+    deploy:
+     replicas: 3
     networks:
       - "encounter-net"
   mobs:
     image: qaedd/mobs:latest
     build: ./mobs
+    deploy:
+     replicas: 3
     networks:
       - "encounter-net"
   weather:
     image: qaedd/weather:latest
     build: ./weather
+    deploy:
+     replicas: 3
     networks:
       - "encounter-net"
   volumes:
