@@ -5,7 +5,7 @@ from random import choice
 
 mobs = ['Dragon','Goblins','Owlbear','Fire Giant']
 
-@app.route('/mobs', methods=['POST'])
+@app.route('/get-mobs', methods=['POST'])
 def get-mob():
     request_ = requests.json()
     if request_ == "Volcano":
