@@ -11,18 +11,18 @@ services:
       source: ./nginx.conf
       target: /etc/nginx/nginx.conf
     networks:
-     - 'encounter-net'
+      - 'encounter-net'
     depends_on:
-     - 'front-end'
+      - 'front-end'
   front-end:
     image: qaedd/front-end:latest
     build: ./front-end
     networks:
-    - 'encounter-net'
+      - 'encounter-net'
     depends_on:
-    - 'weather'
-    - 'mobs'
-    - 'location'
+      - 'weather'
+      - 'mobs'
+      - 'location'
   location:
     image: qaedd/location:latest
     build: ./location
