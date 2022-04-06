@@ -9,3 +9,4 @@ locations = ["Forest","On the road","Fields","Volcano","Tavern","Cemetery","The 
 def get_location():
     location = choice(locations)
     return jsonify(location=location)
+    
