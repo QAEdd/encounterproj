@@ -22,6 +22,6 @@ def get_mob():
         mobs.append('Dragon')
         mobs.append('Dragon')
     mob = choice(mobs)
-    return jsonify(mob)
+    return jsonify(mob=mob)
 
  
