@@ -1,5 +1,6 @@
 from application import app
 import requests
+from flask import jsonify
 from random import choice
 
 locations = ["Forest","On the road","Fields","Volcano","Tavern","Cemetery","The void","just over there"]
