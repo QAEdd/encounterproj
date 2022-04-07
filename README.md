@@ -13,7 +13,7 @@ It was also required that the application was to be created and maintained using
 ##Project Planning
 
 While planning this project i created a risk assessment to recognise the most likely risks for the project.
-![Risk assessment](https://github.com/QAEdd/encounterproj/encounterpics/risk%20assessment.png)
+![Risk assessment](https://github.com/QAEdd/blob/encounterproj/encounterpics/risk%20assessment.png)
 
 Most of the risks that i looked at were at operational errors that can occur as for this program there is very little user input so the biggest and more likely errors that
 may occur are the issues of parts of the pipline failing.
