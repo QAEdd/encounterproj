@@ -46,9 +46,48 @@ A couple of examples of the application working.
 The main aspects of the CI/CD pipeline were:
 * Jira - Project Tracking
 * Git - version control
-* Python - Development Enviroment
+* Ubuntu virutal machine - Development enviroment
 * Jenkins - CI server  
-* Docker - Deployment enviroment
+* Docker - Containerisation tool
 * Ansible - Configuration management
 
-Version control was done using a public repository hosted on Github. Github allows for the use of the feature branch method. 
+###Version control 
+Version control was done using a public repository hosted on Github. Github allows for the use of the feature branch method, which means i can test changes before pushing them to the main deployment.
+![Feature branch](https://github.com/QAEdd/encounterproj/blob/master/encounterpics/featurebranch.png)
+
+### Development Enviroment
+The Development of this application was done on a virtual machine hosted on GCP accessed via VScode.
+
+### CI Server
+
+Jenkins was used as the CI server. After receving a push on the git hub repo Jenkins would then clone the repo and excecute the Jenkins script on the repo. This had 4 main stages too it. The first being a test stage where jenkins would run the unit tests that are located for each of the services. The second stage being a build and deploy which would build and push images of the program to dockerhub. The 3rd stage would then deploy these images over a docker swarm using a swarm manager and swarm worker. The 4th and final stage is where it saves the test outputs to a HTML document.
+
+![Jenkins](https://github.com/QAEdd/encounterproj/blob/master/encounterpics/jenkins%20working.png)
+Showing the successful running of the pipeline.
+
+![Location api tests](https://github.com/QAEdd/encounterproj/blob/master/encounterpics/locaitonapitest.png)
+Location api tests
+
+![Weather api tests](https://github.com/QAEdd/encounterproj/blob/master/encounterpics/weather%20api%20tests.png)
+Weather api tests
+
+![Mob api tests](https://github.com/QAEdd/encounterproj/blob/master/encounterpics/mobapitests.png)
+Mob api tests
+
+![Front end tests](https://github.com/QAEdd/encounterproj/blob/master/encounterpics/frontendtest.png)
+Front end tests
+
+I was able to reach 100% coverage on all the testing i did. This allowed me to know the funcitons of the app worked exactly as intended.
+
+
+### Containerisation tool
+As mentioned earlier my project uses Docker as its containerisation tool. After the tests had been successful it would first build the images for the different services. Once complete it would then push the images to dockerhub using the credentials saved in jenkins. The use of this a this made for easier deployment and much more efficient updating of the application where you can run a rolling update causing no down time to the system.
+
+### Configuration management
+For configuration management Ansible was used where running an ansible playbook will get 4 VMs configured and ready to use and deploy the program on which works very nicely incase any of the swarm vm's go down it does not take long to configure another one.
+
+![Ci pipeline](https://github.com/QAEdd/encounterproj/blob/master/encounterpics/cipipeline.png)
+The overall structure of the pipeline
+
+### Future improvements
+Adding in more diversity in what the applcation has to offer such as a options on what sort of encounter and way of linking it to a more dnd based system. Also adding in a database so the option to save encounters would also be nice.
