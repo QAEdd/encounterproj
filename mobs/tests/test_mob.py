@@ -29,7 +29,7 @@ class TestView(TestBase):
         self.assertIn(b'Dragon',response.data)
     
     @patch('application.routes.choice', return_value='Dragon')
-    def test_mob(self, mock_func):
+    def test_mob4(self, mock_func):
         response = self.client.post(url_for('get_mob'), json={'location':'Forest'})
         self.assert200(response)
         self.assertIn(b'Dragon',response.data)
