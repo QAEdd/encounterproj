@@ -3,12 +3,13 @@ import requests
 from flask import request, jsonify
 from random import choice
 
-mobs = ['Dragon','Goblin Horde','Owlbear','Fire Giant']
+
 
 @app.route('/get-mobs', methods=['POST'])
 def get_mob():
     request_json = request.get_json()
     request_ = request_json['location']
+    mobs = ['Dragon','Goblin Horde','Owlbear','Fire Giant']
     if request_ == "Volcano":
         mobs.append('Fire Giant')
         mobs.append('Fire Giant')
