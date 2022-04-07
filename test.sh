@@ -1,6 +1,6 @@
 
 #!/bin/bash
-declare -a directories=("tests" "tests" "weather" "location")
+declare -a directories=("front-end" "mobs" "weather" "location")
 sudo apt-get update
 sudo apt-get install python3 python3-pip python3-venv
 source venv/bin/activate
