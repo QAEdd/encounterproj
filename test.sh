@@ -10,6 +10,6 @@ for dir in "${directories[@]}"
 do
   cd ${dir}
   python3 -m pytest --cov=application --cov-report=html
-  pwd --cov-report=html
+  pwd htmlcov
   cd ..
 done

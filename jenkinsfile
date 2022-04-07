@@ -27,7 +27,7 @@ pipeline {
     }
     post {
         always {
-            archiveArtifacts artifacts: "*/home/jenkins/.jenkins/workspace/encounter-proj/htmlcov/*"
+            archiveArtifacts artifacts: "*encounter-proj/htmlcov/*"
         }
     }
 }
