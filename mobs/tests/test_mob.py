@@ -16,16 +16,19 @@ class TestView(TestBase):
         self.assert200(response)
         self.assertIn(b'Dragon',response.data)
 
+    @patch('application.routes.choice', return_value='Dragon')
     def test_mob2(self, mock_func):
         response = self.client.post(url_for('get_mob'), json={'location':'On The Road'})
         self.assert200(response)
         self.assertIn(b'Dragon',response.data)
 
+    @patch('application.routes.choice', return_value='Dragon')
     def test_mob3(self, mock_func):
         response = self.client.post(url_for('get_mob'), json={'location':'Volcano'})
         self.assert200(response)
         self.assertIn(b'Dragon',response.data)
     
+    @patch('application.routes.choice', return_value='Dragon')
     def test_mob(self, mock_func):
         response = self.client.post(url_for('get_mob'), json={'location':'Forest'})
         self.assert200(response)
