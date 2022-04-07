@@ -9,6 +9,7 @@ python3 -m venv venv
 for dir in "${directories[@]}"
 do
   cd ${dir}
-  pwd python3 -m pytest --cov=application --cov-report=html
+  python3 -m pytest --cov=application --cov-report=html
+  pwd --cov-report=html
   cd ..
 done
