@@ -17,6 +17,6 @@ class TestFrontend(TestBase):
             m.post('http://mobs:5000/get-mobs', json={'mob':'Dragon'})
             response = self.client.get(url_for('index'))
             self.assert200(response)
-            self.assertIn(b'locatoin : Tavern', response.data)
+            self.assertIn(b'location : Tavern', response.data)
             self.assertIn(b'weat : Cloudy', response.data)
             self.assertIn(b'mob : Dragon', response.data)

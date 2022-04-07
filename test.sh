@@ -12,6 +12,5 @@ do
   pwd
   python3 -m pytest --cov=application --cov-report=html
   pwd
-  pwd htmlcov
   cd ..
 done

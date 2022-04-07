@@ -10,9 +10,9 @@ class TestBase(TestCase):
         return app
 
 class Test_location(TestBase):
-    @patch('applcation.routes.choice', return_value='Tavern')
+    @patch('application.routes.choice', return_value='Tavern')
     def test_loc(self, mock_func):
-        response = self.client.get(url_for('get-location'))
+        response = self.client.get(url_for('get_location'))
         self.assert200(response)
         self.assertIn(b'Tavern', response.data)
         
