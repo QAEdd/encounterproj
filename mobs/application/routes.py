@@ -7,7 +7,7 @@ mobs = ['Dragon','Goblins','Owlbear','Fire Giant']
 
 @app.route('/get-mobs', methods=['POST'])
 def get_mob():
-    request_json = requests.get.json()
+    request_json = requests.get_json()
     request_ = request_json['location']
     if request_ == "Volcano":
         mobs.append('Fire Giant')
@@ -21,7 +21,7 @@ def get_mob():
     elif request_ == 'Tavern':
         mobs.append('Dragon')
         mobs.append('Dragon')
-    mob = choice(mobs)
-    return jsonify(mob=mob)
+    mobb = choice(mobs)
+    return jsonify(mob=mobb)
 
  
