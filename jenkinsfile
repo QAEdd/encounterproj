@@ -1,6 +1,11 @@
 pipeline {
     agent any
     stages {
+        stage('Run tests') {
+            steps {
+                sh 'bash test.sh'
+            }
+        }
         stage('Build and Push'){
             environment {
                 DOCKER_CREDS = credentials('docker-creds')
@@ -18,6 +23,11 @@ pipeline {
                 sh "scp ./nginx.conf jenkins@proj-manager:/home/jenkins/nginx.conf"
                 sh "ssh jenkins@proj-manager < deploy.sh"
             }
+        }
+    }
+    post {
+        always {
+            archiveArtifacts artifacts: "*/htmlcov/*"
         }
     }
 }
