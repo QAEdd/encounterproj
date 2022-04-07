@@ -1,0 +1,1 @@
+{{hostvars['proj-jenkins']['jenks_pubkey']['stdout']}}
