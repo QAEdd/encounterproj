@@ -29,7 +29,7 @@ Service 1: This was the front end of the application and what the user sees. It 
 
 Service 2: This Was a location generator. It randomly chose a location from a set list using random.choice() after receiving a GET request.
 
-Service 3: This was a weather generator. It worked the same as the Location generator using random.choice and a get request.
+Service 3: This was a weather generator. It worked the same as the Location generator using random.choice and a get request.  
 
 Service 4: This was the mob generator. It used a POST request taking in what was generated from the Location service then depending on the location chosen would make the
 chances of different mobs more likely.
